@@ -18,12 +18,11 @@
 
   tasks:
     - name: get uptime using galaxy module
-      junos_rpc:
+      juniper_junos_rpc:
         rpc: get-system-uptime-information
-        format: xml
-        dest: "{{ inventory_hostname }}-uptime.xml"
+        format: text
+        dest: "{{ inventory_hostname }}-uptime.txt"
         host: "{{ ansible_host }}"
-        port: 830
         user: "{{ username }}"
         passwd: "{{ password }}"
       register: uptime
