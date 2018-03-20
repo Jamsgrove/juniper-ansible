@@ -25,7 +25,3 @@
         host: "{{ ansible_host }}"
         user: "{{ username }}"
         passwd: "{{ password }}"
-      register: uptime
-
-    - name: display uptimes
-      debug: var=uptime

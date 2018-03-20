@@ -1,18 +1,18 @@
 
 fpc0:
 --------------------------------------------------------------------------
-Current time: 2018-03-20 04:11:01 UTC
+Current time: 2018-03-20 04:17:19 UTC
 Time Source:  NTP CLOCK 
-System booted: 2018-03-02 06:22:01 UTC (2w3d 21:49 ago)
-Protocols started: 2018-03-02 06:24:02 UTC (2w3d 21:46 ago)
-Last configured: 2018-03-02 06:22:58 UTC (2w3d 21:48 ago) by root
- 4:11AM  up 17 days, 21:49, 1 user, load averages: 0.21, 0.16, 0.11
+System booted: 2018-03-02 06:22:01 UTC (2w3d 21:55 ago)
+Protocols started: 2018-03-02 06:24:02 UTC (2w3d 21:53 ago)
+Last configured: 2018-03-02 06:22:58 UTC (2w3d 21:54 ago) by root
+ 4:17AM  up 17 days, 21:55, 1 user, load averages: 0.10, 0.12, 0.10
 
 fpc1:
 --------------------------------------------------------------------------
-Current time: 2018-03-20 04:11:01 UTC
+Current time: 2018-03-20 04:17:19 UTC
 Time Source:  LOCAL CLOCK 
-System booted: 2018-03-02 06:22:00 UTC (2w3d 21:49 ago)
-Protocols started: 2018-03-02 06:23:58 UTC (2w3d 21:47 ago)
-Last configured: 2018-03-02 06:24:23 UTC (2w3d 21:46 ago) by root
- 4:11AM  up 17 days, 21:49, 0 users, load averages: 0.11, 0.12, 0.08
+System booted: 2018-03-02 06:22:00 UTC (2w3d 21:55 ago)
+Protocols started: 2018-03-02 06:23:58 UTC (2w3d 21:53 ago)
+Last configured: 2018-03-02 06:24:23 UTC (2w3d 21:52 ago) by root
+ 4:17AM  up 17 days, 21:55, 0 users, load averages: 0.07, 0.09, 0.08
