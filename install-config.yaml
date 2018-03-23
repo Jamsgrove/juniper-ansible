@@ -1,0 +1,26 @@
+---
+- name: Install Configuration File
+  hosts:
+    - all
+  roles:
+    - Juniper.junos
+  connection: local
+  gather_facts: no
+
+  vars_prompt:
+    - name: username
+      prompt: Junos Username
+      private: no
+
+    - name: password
+      prompt: Junos Password
+      private: yes
+
+  tasks:
+    - name: install configuration file onto device
+      junos_install_config:
+        host: "{{ ansible_host }}"
+        user: "{{ username }}"
+        passwd: "{{ password }}"
+        file: "config/telnet2.conf"
+        timeout: 120
