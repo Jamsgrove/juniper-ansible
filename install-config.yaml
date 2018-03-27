@@ -24,3 +24,4 @@
         passwd: "{{ password }}"
         file: "config/telnet2.conf"
         timeout: 120
+        comment: "Adding Telnet - JVB-Ansible"
