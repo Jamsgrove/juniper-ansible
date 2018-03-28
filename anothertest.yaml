@@ -1,0 +1,47 @@
+---
+- name: Look for config on a juniper box
+  hosts:
+    - all
+  roles:
+    - Juniper.junos
+  connection: local
+  gather_facts: no
+
+  vars_prompt:
+    - name: username
+      prompt: Junos Username
+      private: no
+    - name: password
+      prompt: Junos Password
+      private: yes
+
+  vars:
+    credentials:
+      host: "{{ inventory_hostname }}"
+      username: "{{ username }}"
+      password: "{{ password }}"
+      port: 22
+
+  tasks:
+#    - name: Checking device has piece of config #Working perfectly! If it returns as "OK", that means the box has the condfig from src. If returns changed then the box does not have that config!
+#      juniper_junos_config:
+#        provider: "{{ credentials }}"
+#        commit: false
+#        diff: true
+#        config_mode: private
+#        check: false
+#        load: 'merge'
+#        src: "config/telnet.conf"
+
+    - name: Checking device has the same config in "set" format
+      juniper_junos_config:
+        provider: "{{ credentials }}"
+        commit: false
+        diff: true
+        config_mode: private
+        check: false
+        lines:
+          - 'set system max-configurations-on-flash 49'
+        load: 'merge'
+        format: 'set'
+#       src: "config/max.set"

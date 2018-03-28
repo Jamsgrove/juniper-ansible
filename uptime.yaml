@@ -21,7 +21,8 @@
       juniper_junos_rpc:
         rpc: get-system-uptime-information
         format: text
-        dest: "{{ inventory_hostname }}-uptime.txt"
+        destdir: uptime-files
         host: "{{ ansible_host }}"
         user: "{{ username }}"
         passwd: "{{ password }}"
+        port: 22

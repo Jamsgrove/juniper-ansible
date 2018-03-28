@@ -7,8 +7,12 @@
   gather_facts: no
 
   tasks:
-    - name: Checking NETCONF connectivity
+    - name: ping check
+      raw: ping -t 5 -c 3 {{ inventory_hostname }}
+    - name: ssh check
       wait_for:
         host: "{{ inventory_hostname }}"
-        port: 830
-        timeout: 5
+        connect_timeout: 5 # maximum number of seconds to wait for a connection to happen before closing and retrying
+        state: started
+        timeout: 10 # maximum number of seconds to wait for
+        port: 22

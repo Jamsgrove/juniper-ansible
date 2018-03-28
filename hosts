@@ -1,5 +1,7 @@
 LAB-AH-MPLS-PE01
 LAB-AH-MPLS-PE02
+
+[mpls-switches]
 LAB-AH-MPLS-STK-SW
 
 [all:vars]

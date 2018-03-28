@@ -1,5 +1,5 @@
 ---
-- name: Install Configuration File
+- name: Look for config on a juniper box
   hosts:
     - all
   roles:
@@ -17,14 +17,8 @@
       private: yes
 
   tasks:
-    - name: install configuration file onto device
-      juniper_junos_config:
+    - juniper_junos_facts:
+        config_format: text
         host: "{{ ansible_host }}"
         user: "{{ username }}"
         passwd: "{{ password }}"
-        port: 22
-        file: "config/telnet2.conf"
-        timeout: 120
-        commit: false
-        diff: true
-
