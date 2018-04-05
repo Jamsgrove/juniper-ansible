@@ -1,7 +1,7 @@
 ---
 - name: Apply configuration to Juniper box
   hosts:
-    - test
+    - pes
   roles:
     - Juniper.junos
   connection: local
