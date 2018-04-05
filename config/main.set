@@ -1,0 +1,10 @@
+set groups SCABIES firewall family inet filter <CLASSIFIER_*> term POLICE_SSH then loss-priority low
+set groups SCABIES firewall family inet filter <CLASSIFIER_*> term POLICE_SSH then forwarding-class BE
+set groups SCABIES firewall family inet filter <CLASSIFIER_*> term POLICE_RSH then loss-priority low
+set groups SCABIES firewall family inet filter <CLASSIFIER_*> term POLICE_RSH then forwarding-class BE
+set firewall policer POLICE_SSH if-exceeding bandwidth-limit 200k
+set firewall policer POLICE_RSH if-exceeding bandwidth-limit 200k
+delete system services telnet
+set system max-configurations-on-flash 15
+set system max-configuration-rollbacks 49
+

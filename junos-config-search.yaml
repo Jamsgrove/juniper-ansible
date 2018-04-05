@@ -1,7 +1,7 @@
 ---
 - name: Look for config on a juniper box
   hosts:
-    - all
+    - test
   roles:
     - Juniper.junos
   connection: local
@@ -40,8 +40,10 @@
         diff: true
         config_mode: private
         check: false
-        lines:
-          - 'set system max-configurations-on-flash 49'
-        load: 'merge'
+#        lines:
+#          - 'delete system services telnet'
+        load: 'set'
         format: 'set'
+        ignore_warning: 'statement not found'
+        src: "config/main.set"
 #       src: "config/max.set"

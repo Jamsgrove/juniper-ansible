@@ -1,0 +1,41 @@
+---
+- name: Apply configuration to Juniper box
+  hosts:
+    - test
+  roles:
+    - Juniper.junos
+  connection: local
+  gather_facts: no
+
+#  pre_tasks:
+#    - pause:
+#        seconds: 10
+
+  vars_prompt:
+    - name: username
+      prompt: Junos Username
+      private: no
+    - name: password
+      prompt: Junos Password
+      private: yes
+
+  vars:
+    credentials:
+      host: "{{ inventory_hostname }}"
+      username: "{{ username }}"
+      password: "{{ password }}"
+      port: 22
+
+  tasks:
+    - name: Load set, compare diff, commit check and then commit changes with comment
+      juniper_junos_config:
+        provider: "{{ credentials }}"
+        commit: true
+        diff: true
+        config_mode: private
+        check: true
+        src: "config/main.set"
+        load: 'set'
+        format: 'set'
+        comment: 'NEN-17-311 C2 MPLS SSH,RSH,RSYNC CoS changes - JVB'
+        ignore_warning: 'statement not found'
