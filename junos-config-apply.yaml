@@ -7,10 +7,6 @@
   connection: local
   gather_facts: no
 
-#  pre_tasks:
-#    - pause:
-#        seconds: 10
-
   vars_prompt:
     - name: username
       prompt: Junos Username
@@ -37,5 +33,5 @@
         src: "config/main.set"
         load: 'set'
         format: 'set'
-        comment: 'NEN-17-311 C2 MPLS SSH,RSH,RSYNC CoS changes - JVB'
+        comment: 'Config changes - JOB 73 - JVB'
         ignore_warning: 'statement not found'
