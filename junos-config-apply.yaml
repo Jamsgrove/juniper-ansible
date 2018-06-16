@@ -30,7 +30,9 @@
         diff: true
         config_mode: private
         check: true
-        src: "config/main.set"
+#        src: "config/main.set"
+        lines:
+          - "set system services something something"
         load: 'set'
         format: 'set'
         comment: 'Config changes - JOB 73 - JVB'
